@@ -1,0 +1,8 @@
+---
+name: spring-music
+
+dependencies:
+- openjdk
+
+files:
+- spring-music/**/*
