@@ -1,0 +1,33 @@
+---
+name: spring-server-ergin
+director_uuid: b5f93f0d-61c6-4e8f-9739-17ca3dd4434c
+
+releases:
+- name: spring-music-release
+  version: latest
+
+stemcells:
+- alias: ubuntu
+  os: ubuntu-trusty
+  version: latest
+
+update:
+  canaries: 0
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
+
+instance_groups:
+- name: server
+  instances: 1
+  azs: [z1]
+  jobs:
+  - name: server
+    release: spring-music-release
+  vm_type: t2.small
+  vm_extensions: [5GB_ephemeral_disk]
+  stemcell: ubuntu
+  networks:
+  - name: private
+  properties:
+    name: ERGINNN
