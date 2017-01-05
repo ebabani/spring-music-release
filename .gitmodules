@@ -1,0 +1,3 @@
+[submodule "src/spring-music"]
+	path = src/spring-music
+	url = https://github.com/ebabani/spring-music
